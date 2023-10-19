@@ -1,0 +1,11 @@
+{
+  "name": "grupo_SNL_backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/IIC2513/grupo_SNL_backend.git",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.14.2",
+    "nodemon": "^3.0.1"
+  }
+}
