@@ -1,6 +1,7 @@
 import koa from "koa";
 import KoaLogger from "koa-logger";
 import { koaBody } from "koa-body";
+import routes from "./routes.js";
 
 const app = new koa();
 
