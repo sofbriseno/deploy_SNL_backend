@@ -2,6 +2,7 @@
   "name": "grupo_SNL_backend",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "repository": "https://github.com/IIC2513/grupo_SNL_backend.git",
   "license": "MIT",
   "dependencies": {
