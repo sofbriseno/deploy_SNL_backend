@@ -2,6 +2,10 @@ import koa from "koa";
 
 const app = new koa();
 
+app.use((ctx, next) => {
+    ctx.body = "Hola mamaguevo\nQue hace?\nMe mira o que hace?"
+});
+
 app.listen(3000, () =>{
-    console.log("Iniciando la wea de app , porfavor espere... \nEstá en el puerto 3000");
+    console.log("Iniciando la wea de app en el puerto 3000");
 });
