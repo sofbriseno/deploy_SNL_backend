@@ -1,4 +1,5 @@
-import Router from "koa-router";
+// import Router from "koa-router";
+const Router = require('koa-router');
 
 const router = new Router();
 
@@ -9,11 +10,11 @@ const users = [
     },
     {
         "user": "Laura",
-        "pass": "ContrasenaGenerica"
+        "pass": "12345678"
     },
     {
         "user": "Sofia",
-        "pass": "GatoLopaEscalopa"
+        "pass": "12345678"
     }
 ]
 
@@ -21,4 +22,4 @@ router.get("users.show", "/show", async(ctx) =>{
     ctx.body = users;
 })
 
-export default router;
+module.exports = router;
