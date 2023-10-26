@@ -1,10 +1,6 @@
-// import koa from "koa";
 const Koa = require('koa');
-// import KoaLogger from "koa-logger";
 const KoaLogger = require('koa-logger');
-// import { koaBody } from "koa-body";
 const { koaBody } = require('koa-body');
-// import router from "./routes.js";
 const router = require('./routes.js');
 const orm = require('./models');
 
