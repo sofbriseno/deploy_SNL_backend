@@ -1,0 +1,36 @@
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Carta extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+      this.hasOne(models.Avanzar, {
+        foreignKey: 'id',
+      });
+      this.hasOne(models.Retroceder, {
+        foreignKey: 'id',
+      });
+      this.hasOne(models.Ingreso, {
+        foreignKey: 'id',
+      });
+      this.hasOne(models.Perdida, {
+        foreignKey: 'id',
+      });
+    }
+  }
+  Carta.init({
+    tipo: DataTypes.STRING,
+    descripcion: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'Carta',
+  });
+  return Carta;
+};
