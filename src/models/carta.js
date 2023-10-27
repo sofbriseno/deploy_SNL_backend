@@ -35,8 +35,7 @@ module.exports = (sequelize, DataTypes) => {
           }
         }
       }
-    },
-    descripcion: DataTypes.STRING
+    }
   }, {
     sequelize,
     modelName: 'Carta',
