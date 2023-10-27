@@ -10,12 +10,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       posicion_v: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       posicion_h: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       tipo: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

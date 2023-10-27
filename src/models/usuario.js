@@ -17,9 +17,32 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Usuario.init({
-    nombre: DataTypes.STRING,
-    contrasena: DataTypes.STRING,
-    mail: DataTypes.STRING,
+    nombre: {
+      type: DataTypes.STRING,
+      validate: {
+        isAlphanumeric: {
+          msg: 'Usario debe ser alfanumérico'
+        }
+      },
+    },
+    contrasena: {
+      type: DataTypes.STRING,
+      validate: {
+        isValidPassword(value) {
+          if (!value.match(/[a-z]/) || !value.match(/[0-9]/) || !value.match(/[@$!%*?&]/)) {
+            throw new Error('La contraseña debe contener por lo menos una letra, un número y un caracter especial')
+          }
+        }
+      }
+    },
+    mail: {
+      type: DataTypes.STRING,
+      validate: {
+        isEmail: {
+          msg: 'Mail debe tener formato de correo electrónico'
+        }
+      },
+    },
     ranking: DataTypes.INTEGER
   }, {
     sequelize,

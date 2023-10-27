@@ -10,12 +10,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       estado: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       turno_actual: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       num_jugadores: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

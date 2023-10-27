@@ -10,14 +10,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id_partida: {
-        type: Sequelize.INTEGER,
         references: { model: 'Partidas', key: 'id' },
+        allowNull: false,
+        type: Sequelize.INTEGER,
       },
       id_jugador: {
-        type: Sequelize.INTEGER,
         references: { model: 'Jugadors', key: 'id' },
+        allowNull: false,
+        unique: true,
+        type: Sequelize.INTEGER,
       },
       num: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

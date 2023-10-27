@@ -18,8 +18,23 @@ module.exports = (sequelize, DataTypes) => {
   }
   Partida.init({
     estado: DataTypes.BOOLEAN,
-    turno_actual: DataTypes.INTEGER,
-    num_jugadores: DataTypes.INTEGER
+    turno_actual: {
+      type: DataTypes.INTEGER,
+      validate: {
+        isLessThanOtherField(value) {
+          if( value > this.num_jugadores) {
+            throw new Error('Turno actual debe ser menor o igual que el número de jugadores.');
+          }
+        }
+      }
+    },
+    num_jugadores: {
+      type: DataTypes.INTEGER,
+      validate: {
+        min: 2,
+        max: 4
+      }
+    }
   }, {
     sequelize,
     modelName: 'Partida',

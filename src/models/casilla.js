@@ -23,9 +23,30 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Casilla.init({
-    posicion_v: DataTypes.INTEGER,
-    posicion_h: DataTypes.INTEGER,
-    tipo: DataTypes.STRING
+    posicion_v: {
+      type: DataTypes.INTEGER,
+      validate: {
+        min: 0,
+        // max: (?)
+      }
+    },
+    posicion_h: {
+      type: DataTypes.INTEGER,
+      validate: {
+        min: 0,
+        // max: (?)
+      }
+    },
+    tipo: {
+      type: DataTypes.STRING,
+      validate: {
+        isValidType(value) {
+          if (!value.match(/[Normal|Escalera|Tobogan]+/)) {
+            throw new Error('La casilla pude ser unicamente de tipo "Normal", "Escalera" o "Tobogan".')
+          }
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'Casilla',

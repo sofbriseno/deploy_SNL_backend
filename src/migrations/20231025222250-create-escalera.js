@@ -10,12 +10,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id_casilla: {
-        type: Sequelize.INTEGER,
         references: { model: 'Casillas', key: 'id' },
+        unique: true,
+        type: Sequelize.INTEGER,
+        
       },
       id_nueva_casilla: {
-        type: Sequelize.INTEGER,
         references: { model: 'Casillas', key: 'id' },
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        
       },
       createdAt: {
         allowNull: false,

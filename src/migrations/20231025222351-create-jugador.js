@@ -10,17 +10,23 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id_usuario: {
-        type: Sequelize.INTEGER,
         references: { model: 'Usuarios', key: 'id' },
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        
       },
       personaje: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       id_casilla: {
-        type: Sequelize.INTEGER,
         references: { model: 'Casillas', key: 'id' },
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        
       },
       dinero: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

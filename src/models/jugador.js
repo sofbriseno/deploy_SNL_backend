@@ -24,9 +24,20 @@ module.exports = (sequelize, DataTypes) => {
   }
   Jugador.init({
     id_usuario: DataTypes.INTEGER,
-    personaje: DataTypes.INTEGER,
+    personaje: {
+      type: DataTypes.INTEGER,
+      validate: {
+        min: 1,
+        max: 4
+      }
+    },
     id_casilla: DataTypes.INTEGER,
-    dinero: DataTypes.INTEGER
+    dinero: {
+      type: DataTypes.INTEGER,
+      validate: {
+        min: 0
+      }
+    }
   }, {
     sequelize,
     modelName: 'Jugador',

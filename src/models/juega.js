@@ -22,7 +22,13 @@ module.exports = (sequelize, DataTypes) => {
   Juega.init({
     id_partida: DataTypes.INTEGER,
     id_jugador: DataTypes.INTEGER,
-    num: DataTypes.INTEGER
+    num: {
+      type: DataTypes.INTEGER,
+      validate: {
+        min: 1,
+        max: 4
+      }
+    }
   }, {
     sequelize,
     modelName: 'Juega',

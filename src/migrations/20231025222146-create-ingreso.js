@@ -10,14 +10,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id_carta: {
-        type: Sequelize.INTEGER,
         references: { model: 'Cartas', key: 'id' },
+        unique: true,
+        type: Sequelize.INTEGER,
+        
       },
       monto: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       descripcion: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+        
       },
       createdAt: {
         allowNull: false,

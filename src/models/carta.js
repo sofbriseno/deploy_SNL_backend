@@ -26,7 +26,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Carta.init({
-    tipo: DataTypes.STRING,
+    tipo: {
+      type: DataTypes.STRING,
+      validate: {
+        isValidType(value) {
+          if (!value.match(/[Avanzar|Retroceder|Ingreso|Perdida]+/)) {
+            throw new Error('La casilla pude ser unicamente de tipo "Normal", "Escalera" o "Tobogan".')
+          }
+        }
+      }
+    },
     descripcion: DataTypes.STRING
   }, {
     sequelize,
