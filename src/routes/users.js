@@ -30,4 +30,57 @@ router.get("users.list","/usersData",async(ctx)=>{
 })
 
 
+// PUT /users/:id - Actualizar un usuario por ID
+router.put("users.update","/:id",async(ctx)=>{
+    try{
+        const userId = ctx.params.id;
+        const newData = ctx.request.body;
+        
+        // Buscar el usuario por ID
+        const user = await ctx.orm.Usuario.findByPk(userId);
+
+        if (!user) {
+            ctx.status = 404;
+            ctx.body = { error: 'Usuario no encontrado' };
+            return;
+        }
+
+        // Actualizar los datos del usuario
+        await user.update(newData);
+
+        ctx.body = user;
+        ctx.status = 200;
+    } catch(error){
+        ctx.body = error;
+        ctx.status = 400;
+    }
+})
+
+  
+  // DELETE /users/:id - Eliminar un usuario por ID
+  router.del("users.delete","/:id",async(ctx)=>{
+    try{
+        const userId = ctx.params.id;
+        
+        // Buscar el usuario por ID
+        const user = await ctx.orm.Usuario.findByPk(userId);
+
+        if (!user) {
+            ctx.status = 404;
+            ctx.body = { error: 'Usuario no encontrado' };
+            return;
+        }
+
+        // Eliminar el usuario
+        await user.destroy();
+
+        ctx.body = { message: `Usuario con ID ${userId} eliminado` };
+        ctx.status = 200;
+    } catch(error){
+        ctx.body = error;
+        ctx.status = 400;
+    }
+});
+
+
 module.exports = router;
