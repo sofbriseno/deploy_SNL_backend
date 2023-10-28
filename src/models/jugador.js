@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Usuario, {
         foreignKey: 'id_usuario',
       });
+      this.belongsTo(models.Partida, {
+        foreignKey: 'id_partida',
+      });
       this.belongsTo(models.Casilla, {
         foreignKey: 'id_casilla',
       });
@@ -24,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Jugador.init({
     id_usuario: DataTypes.INTEGER,
+    id_partida: DataTypes.INTEGER,
     personaje: {
       type: DataTypes.INTEGER,
       validate: {

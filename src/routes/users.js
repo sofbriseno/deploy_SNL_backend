@@ -13,7 +13,7 @@ router.post("users.create","/",async(ctx)=>{
     }
 })
 
-router.get("users.list","/",async(ctx)=>{
+router.get("users.list","/usersData",async(ctx)=>{
     try{
         const users = await ctx.orm.Usuario.findAll();
         // Si quisieramos mostrar el usuario por su id sería de la siguiente manera:

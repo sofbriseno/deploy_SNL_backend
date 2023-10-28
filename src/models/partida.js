@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Juega, {
         foreignKey: 'id',
       });
+      this.hasMany(models.Jugador, {
+        foreignKey: 'id_partida',
+      });
     }
   }
   Partida.init({

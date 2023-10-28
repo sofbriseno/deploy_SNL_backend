@@ -15,6 +15,12 @@ module.exports = {
         type: Sequelize.INTEGER,
         
       },
+      id_partida: {
+        references: { model: 'Partidas', key: 'id' },
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        
+      },
       personaje: {
         allowNull: false,
         type: Sequelize.INTEGER
