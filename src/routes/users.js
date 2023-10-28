@@ -29,5 +29,19 @@ router.get("users.list","/usersData",async(ctx)=>{
     }
 })
 
+router.delete("users.delete", "/:id", async(ctx)=>{
+    try{
+        const user = await ctx.orm.Usuario.findOne({where: {id: ctx.params.id}});
+        if (!user) {
+            ctx.throw(404, 'Usuario no encontrado');
+          }
+        await user.destroy();
+        ctx.body = user;
+        ctx.status = 204;
+    } catch(error){
+        ctx.body = error;
+        ctx.status = 400;
+    }
+})
 
 module.exports = router;
