@@ -23,7 +23,7 @@ app.use(router.routes());
 
 // Middleware personalizado. Encargado de dar respuesta "Hola Mundo!"
 app.use((ctx, next) => {
-    ctx.body = "Hola Mundo! Saludos desde IIC2513";
+    ctx.body = "Hola Mundo! Saludos desde IIC2513!";
 });
 
 // Hacer que el servidor escuche en el puerto 3000
