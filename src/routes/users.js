@@ -4,6 +4,7 @@ const router = new Router();
 
 router.post("users.create","/",async(ctx)=>{
     try{
+        console.log(ctx.request.body);
         const user = await ctx.orm.Usuario.create(ctx.request.body);
         ctx.body = user;
         ctx.status = 201;
