@@ -1,6 +1,6 @@
 # grupo_SNL_backend
 
-Ver clase 15 para revisar las cosas de cómo armar API y la 17 pa ver cómo usar los JWT.
+Documentación : https://documenter.getpostman.com/view/30754862/2s9YXmYffj
 
 ## Tareas pendientes:
 
