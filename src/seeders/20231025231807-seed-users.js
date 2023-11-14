@@ -1,8 +1,17 @@
+const bcrypt = require('bcrypt');
+
+const saltRounds = 10;
+
+const hashPassword1 = bcrypt.hashSync('@sofia123', saltRounds);
+const hashPassword2 = bcrypt.hashSync('@laura123', saltRounds);
+const hashPassword3 = bcrypt.hashSync('@nicolas123', saltRounds);
+const hashPassword4 = bcrypt.hashSync('@juanita123', saltRounds);
+
 module.exports = {
   up: (queryInterface) => queryInterface.bulkInsert('Usuarios', [
     {
       nombre: 'sofiabriseno',
-      contrasena: '@sofia123',
+      contrasena: hashPassword1,
       mail: 'sofia.briseno@uc.cl',
       ranking: 0,
       createdAt: new Date(),
@@ -10,7 +19,7 @@ module.exports = {
     },
     {
       nombre: 'lauracid',
-      contrasena: '@laura123',
+      contrasena: hashPassword2,
       mail: 'laura.cid@uc.cl',
       ranking: 0,
       createdAt: new Date(),
@@ -18,7 +27,7 @@ module.exports = {
     },
     {
       nombre: 'nicolasgutierrez',
-      contrasena: '@nicolas123',
+      contrasena: hashPassword3,
       mail: 'njgutierrez@uc.cl',
       ranking: 0,
       createdAt: new Date(),
@@ -26,7 +35,7 @@ module.exports = {
     },
     {
       nombre: 'juanitaperez',
-      contrasena: '@juanita123',
+      contrasena: hashPassword4,
       mail: 'juanita@gmail.com',
       ranking: 0,
       createdAt: new Date(),

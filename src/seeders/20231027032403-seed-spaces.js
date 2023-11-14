@@ -59,7 +59,7 @@ module.exports = {
     { // ID = 9
       posicion_v: 4,
       posicion_h: 2,
-      tipo: 'Tobogan',
+      tipo: 'Serpiente',
       createdAt: new Date(),
       updatedAt: new Date(),
     },

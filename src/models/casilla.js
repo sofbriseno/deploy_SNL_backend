@@ -12,13 +12,19 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasOne(models.Escalera, {
-        foreignKey: 'id',
+        foreignKey: 'id_casilla',
       });
-      this.hasOne(models.Tobogan, {
-        foreignKey: 'id',
+      this.hasMany(models.Escalera, {
+        foreignKey: 'id_nueva_casilla',
+      });
+      this.hasOne(models.Serpiente, {
+        foreignKey: 'id_casilla',
+      });
+      this.hasMany(models.Serpiente, {
+        foreignKey: 'id_nueva_casilla',
       });
       this.hasMany(models.Jugador, {
-        foreignKey: 'id',
+        foreignKey: 'id_casilla',
       });
     }
   }
@@ -41,8 +47,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         isValidType(value) {
-          if (!value.match(/[Normal|Escalera|Tobogan]+/)) {
-            throw new Error('La casilla pude ser unicamente de tipo "Normal", "Escalera" o "Tobogan".')
+          if (!value.match(/[Normal|Escalera|Serpiente]+/)) {
+            throw new Error('La casilla pude ser unicamente de tipo "Normal", "Escalera" o "Serpiente".')
           }
         }
       }
