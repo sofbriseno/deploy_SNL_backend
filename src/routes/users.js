@@ -2,7 +2,6 @@ const Router = require('koa-router');
 
 const router = new Router();
 
-
 router.get("users.list","/",async(ctx)=>{
     try{
         const users = await ctx.orm.Usuario.findAll();
