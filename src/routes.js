@@ -14,6 +14,7 @@ const losses = require('./routes/losses.js');
 const spaces = require('./routes/spaces.js');
 const ladders = require('./routes/ladders.js');
 const snakes = require('./routes/snakes.js');
+const players = require('./routes/players.js');
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ router.use("/losses", losses.routes());
 router.use("/spaces", spaces.routes());
 router.use("/ladders", ladders.routes());
 router.use("/snakes", snakes.routes());
+router.use("/players", players.routes());
 
 // Desde esta línea, todas las rutas requeriran un JWT. Esto na aplica para
 // las líneas anteriores
