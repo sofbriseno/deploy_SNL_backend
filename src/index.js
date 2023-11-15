@@ -17,7 +17,7 @@ db.sequelize
             if (err) {
                 return console.error('Failed', err);
             }
-            console.log('Listening on port ${PORT}');
+            console.log(`Listening on port ${PORT}`);
             return app;
         });
     })

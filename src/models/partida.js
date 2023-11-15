@@ -11,9 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.hasMany(models.Juega, {
-        foreignKey: 'id',
-      });
       this.hasMany(models.Jugador, {
         foreignKey: 'id_partida',
       });
@@ -34,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     num_jugadores: {
       type: DataTypes.INTEGER,
       validate: {
-        min: 2,
+        min: 1,
         max: 4
       }
     }

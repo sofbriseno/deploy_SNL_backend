@@ -12,16 +12,16 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasOne(models.Avanzar, {
-        foreignKey: 'id',
+        foreignKey: 'id_carta',
       });
       this.hasOne(models.Retroceder, {
-        foreignKey: 'id',
+        foreignKey: 'id_carta',
       });
       this.hasOne(models.Ingreso, {
-        foreignKey: 'id',
+        foreignKey: 'id_carta',
       });
       this.hasOne(models.Perdida, {
-        foreignKey: 'id',
+        foreignKey: 'id_carta',
       });
     }
   }
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         isValidType(value) {
           if (!value.match(/[Avanzar|Retroceder|Ingreso|Perdida]+/)) {
-            throw new Error('La casilla pude ser unicamente de tipo "Normal", "Escalera" o "Tobogan".')
+            throw new Error('La carta pude ser unicamente de tipo "Avanzar", "Retroceder", "Ingreso" o "Perdida".')
           }
         }
       }
@@ -39,6 +39,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Carta',
+    tableName: 'Cartas',
   });
   return Carta;
 };
