@@ -20,9 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Casilla, {
         foreignKey: 'id_casilla',
       });
-      this.hasOne(models.Juega, {
-        foreignKey: 'id',
-      });
     }
   }
   Jugador.init({

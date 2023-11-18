@@ -22,9 +22,9 @@ app.use(koaBody());
 app.use(router.routes());
 
 // Middleware personalizado. Encargado de dar respuesta "Hola Mundo!"
-app.use((ctx, next) => {
-    ctx.body = "Hola Mundo! Saludos desde IIC2513!";
-});
+//app.use((ctx, next) => {
+//    ctx.body = "Hola Mundo! Saludos desde IIC2513!";
+//});
 
 // Hacer que el servidor escuche en el puerto 3000
 // app.listen(3000, () =>{

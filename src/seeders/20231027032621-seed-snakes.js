@@ -1,5 +1,5 @@
 module.exports = {
-  up: (queryInterface) => queryInterface.bulkInsert('Tobogans', [
+  up: (queryInterface) => queryInterface.bulkInsert('Serpientes', [
     {
       id_casilla: 9,
       id_nueva_casilla: 5,
@@ -7,5 +7,5 @@ module.exports = {
       updatedAt: new Date(),
     }
   ]),
-  down: (queryInterface) => queryInterface.bulkDelete('Tobogans', null, {}),
+  down: (queryInterface) => queryInterface.bulkDelete('Serpientes', null, {}),
 };
