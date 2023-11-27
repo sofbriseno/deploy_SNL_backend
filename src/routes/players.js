@@ -33,6 +33,25 @@ router.get("player.getPlayers","/:id",async(ctx)=>{
     }
 })
 
+router.get("players.user", "/valid/:id", async (ctx) => {
+    const userID = ctx.params.id;
+    try {
+        const players = await ctx.orm.Jugador.findAll({
+            where: {id_usuario:userID},
+            include: [{
+                model: ctx.orm.Partida,
+                require:true,
+                where: {estado:true}
+            }]
+        })
+        ctx.body = players;
+        ctx.status = 200
+    } catch (error) {
+        ctx.body = error;
+        ctx.status = 400
+    }
+})
+
 router.put("player.update", "/:id/:personaje", async(ctx) => {
     const character = ctx.params.personaje;
     const gameID = ctx.params.id;
