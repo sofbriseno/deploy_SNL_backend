@@ -52,6 +52,7 @@ router.get("game.info", "/:id", async(ctx) => {
     }
 })
 
+
 // información de partida + jugadores dentro de ella
 router.get("game.getGame","/gameData/:id",async(ctx)=>{
     try{
