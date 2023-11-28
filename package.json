@@ -24,6 +24,6 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "create" : "node src/create.js"
+    "deploy" : "node src/create.js"
   }
 }
