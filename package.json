@@ -26,10 +26,10 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "deploy": "node src/start.js",
-    "db:migrate": "sequelize db:migrate",
-    "db:seed": "sequelize db:seed:all",
-    "db:drop": "sequelize db:drop",
-    "db:create": "sequelize db:create",
-    "db:reset": "run-s db:drop db:create"
+    "db:migrate": "NODE_ENV=production sequelize db:migrate",
+    "db:seed": "NODE_ENV=production sequelize db:seed:all",
+    "db:drop": "NODE_ENV=production sequelize db:drop",
+    "db:create": "NODE_ENV=production sequelize db:create",
+    "db:reset": "NODE_ENV=production run-s db:drop db:create"
   }
 }
