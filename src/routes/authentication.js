@@ -69,7 +69,7 @@ router.post("authentication.login", "/login", async(ctx)=>{
         return
     }
     // Creamos el JWT. Si quisieras agregar distintos scopes, como por ejemplo
-    // "admin", podrian hacer un llamado a la bae de datos y cambiar el playload
+    // "admin", podrian hacer un llamado a la base de datos y cambiar el playload
     // en base a eso.
     const expirationSecods = 1 * 60 * 60 * 24;
     const JWT_PRIVATE_KEY = process.env.JWT_SECRET;
