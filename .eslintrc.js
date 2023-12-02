@@ -3,9 +3,12 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
+    "plugins": [
+        "node"
+    ],
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:node/recommended"
     ],
     "overrides": [
         {
@@ -28,5 +31,7 @@ module.exports = {
         "react"
     ],
     "rules": {
+        'node/no-unpublished-require': ['error', { allowModules: ['koa', 'koa-logger', 'koa-body', '@koa/cors'] }],
+        'node/no-missing-require': ['error', { allowModules: ['koa', 'koa-logger', 'koa-body', '@koa/cors'] }],
     }
 }
