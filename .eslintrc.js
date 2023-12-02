@@ -33,5 +33,6 @@ module.exports = {
     "rules": {
         'node/no-unpublished-require': ['error', { allowModules: ['koa', 'koa-logger', 'koa-body', '@koa/cors'] }],
         'node/no-missing-require': ['error', { allowModules: ['koa', 'koa-logger', 'koa-body', '@koa/cors'] }],
+        'no-unused-vars': 'off',
     }
 }

@@ -39,7 +39,7 @@ router.get("ladder.info", "/:id", async(ctx) => {
         return;
     }
     if (!ladder) {
-        ctx.body = `La Escalera con ID '${id}' no existe.`;
+        ctx.body = `La Escalera con ID '${ctx.params.id}' no existe.`;
         ctx.status = 404;
         return
     }
