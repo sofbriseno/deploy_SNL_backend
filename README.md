@@ -1,22 +1,6 @@
 # grupo_SNL_backend
 
-Documentación : https://documenter.getpostman.com/view/30754862/2s9YXmYffj
-
-## Tareas pendientes:
-
-- Terminar de armar el modelo E/R
-- Setup de koa (nico)
-
-=> Coordinar hora el sábado para armar base de datos en PostgreSQL.
-
-## Total de tareas:
-- Router de koa
-- Armar base de datos con PostgreSQL igual al modelo E/R
-- API
-- Conectar API con frontend
-- Documentación de la BDD (setup)
-- Documentación de la API (setup y uso)
-
+Documentación de la API : https://documenter.getpostman.com/view/30754862/2s9YXmYffj
 
 ## Documentación BDD
 Para configurar y levantar la base de datos, se deben seguir los siguientes pasos:
