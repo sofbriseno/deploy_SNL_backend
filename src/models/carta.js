@@ -17,12 +17,6 @@ module.exports = (sequelize, DataTypes) => {
       this.hasOne(models.Retroceder, {
         foreignKey: 'id_carta',
       });
-      this.hasOne(models.Ingreso, {
-        foreignKey: 'id_carta',
-      });
-      this.hasOne(models.Perdida, {
-        foreignKey: 'id_carta',
-      });
     }
   }
   Carta.init({
@@ -30,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         isValidType(value) {
-          if (!value.match(/[Avanzar|Retroceder|Ingreso|Perdida]+/)) {
+          if (!value.match(/[Avanzar|Retroceder]+/)) {
             throw new Error('La carta pude ser unicamente de tipo "Avanzar", "Retroceder", "Ingreso" o "Perdida".')
           }
         }

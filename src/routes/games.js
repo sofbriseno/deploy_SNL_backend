@@ -153,6 +153,38 @@ router.put("game.update", "/num_jugadores/:id", async(ctx) => {
     }
 })
 
+// Disminuir el número de jugadores de la partida
+router.put("game.update", "/num_players/:id", async(ctx) => {
+    const gameID = ctx.params.id;
+    let num;
+    let game;
+    try{
+        game = await ctx.orm.Partida.findByPk(gameID);
+    } catch (error) {
+        ctx.body = error;
+        ctx.status = 400;
+        return;
+    }
+    if (!game) {
+        ctx.body =  `La partida con ID = '${gameID}' no fue encontrada`;
+        ctx.status = 404;
+        return;
+    }
+    try {
+        num = game.num_jugadores - 1;
+        await game.update({
+            estado: game.estado,
+            turno_actual: game.turno_actual,
+            num_jugadores: num,
+        });
+        ctx.body = game;
+        ctx.status = 202; 
+    } catch (error) {
+        ctx.body = error;
+        ctx.status = 400;
+    }
+})
+
 // cambia el estado de la partida a false (true: partida en juego | false: partida terminada)
 router.put("game.update", "/estado/:id", async(ctx) => {
     const gameID = ctx.params.id;
