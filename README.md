@@ -1,7 +1,6 @@
 # grupo_SNL_backend
 
-Documentación : https://documenter.getpostman.com/view/30754862/2s9YXmYffj
-
+Documentación API : https://documenter.getpostman.com/view/30754862/2s9YXmYffj
 
 ## Documentación BDD
 Para configurar y levantar la base de datos, se deben seguir los siguientes pasos:
