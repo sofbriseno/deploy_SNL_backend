@@ -9,6 +9,7 @@
     "@koa/cors": "^4.0.0",
     "bcrypt": "^5.1.1",
     "dotenv": "^16.3.1",
+    "eslint": "^8.55.0",
     "function-bind": "^1.1.2",
     "jsonwebtoken": "^9.0.2",
     "koa": "^2.14.2",
@@ -23,6 +24,17 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "deploy": "node src/start.js",
+    "db:migrate": "NODE_ENV=production sequelize db:migrate",
+    "db:seed": "NODE_ENV=production sequelize db:seed:all",
+    "db:drop": "NODE_ENV=production sequelize db:drop",
+    "db:create": "NODE_ENV=production sequelize db:create",
+    "db:reset": "NODE_ENV=production run-s db:drop db:create",
+    "lint": "eslint --fix src"
+  },
+  "devDependencies": {
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.33.2"
   }
 }
