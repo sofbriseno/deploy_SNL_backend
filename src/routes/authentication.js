@@ -73,15 +73,16 @@ router.post("authentication.login", "/login", async(ctx)=>{
     // en base a eso.
     const expirationSecods = 1 * 60 * 60 * 24;
     const JWT_PRIVATE_KEY = process.env.JWT_SECRET;
+    var token;
     if (user.nombre == "sofiabriseno") {
-        var token = jwt.sign(
+        token = jwt.sign(
             { scope: ['user', 'admin'] },
             JWT_PRIVATE_KEY,
             { subject: user.id.toString() },
             { expiresIn: expirationSecods }
         );
     } else {
-        var token = jwt.sign(
+        token = jwt.sign(
             { scope: ['user'] },
             JWT_PRIVATE_KEY,
             { subject: user.id.toString() },
