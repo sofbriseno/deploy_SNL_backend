@@ -38,7 +38,7 @@ router.get("card.info", "/:id", async(ctx) => {
         return;
     }
     if (!card) {
-        ctx.body = `La carta con ID '${id}' no existe.`;
+        ctx.body = `La carta con ID '${ctx.params.id}' no existe.`;
         ctx.status = 404;
         return
     }

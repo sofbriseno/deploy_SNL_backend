@@ -39,7 +39,7 @@ router.get("snake.info", "/:id", async(ctx) => {
         return;
     }
     if (!snake) {
-        ctx.body = `La Serpiente con ID '${id}' no existe.`;
+        ctx.body = `La Serpiente con ID '${ctx.params.id}' no existe.`;
         ctx.status = 404;
         return
     }
