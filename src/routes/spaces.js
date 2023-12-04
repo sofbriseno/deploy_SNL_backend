@@ -38,7 +38,7 @@ router.get("space.info", "/:id", async(ctx) => {
         return;
     }
     if (!space) {
-        ctx.body = `La Casilla con ID '${id}' no existe.`;
+        ctx.body = `La Casilla con ID '${ctx.params.id}' no existe.`;
         ctx.status = 404;
         return
     }

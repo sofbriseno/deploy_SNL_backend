@@ -39,7 +39,7 @@ router.get("game.info", "/:id", async(ctx) => {
         return;
     }
     if (!game) {
-        ctx.body = `La partida con ID '${id}' no existe.`;
+        ctx.body = `La partida con ID '${ctx.params.id}' no existe.`;
         ctx.status = 404;
         return
     }
@@ -207,7 +207,7 @@ router.put("game.update", "/estado/:id", async(ctx) => {
         return;
     }
     try {
-        num = game.num_jugadores + 1;
+        //num = game.num_jugadores + 1;
         await game.update({
             estado: false,
             turno_actual: game.turno_actual,
